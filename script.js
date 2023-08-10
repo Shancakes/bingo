@@ -1,8 +1,9 @@
+
 const bingoNumbers = Array.from({ length: 25 }, (_, i) => i + 1);
 const freeSpace = "Free Space";
 const shuffledNumbers = shuffle(bingoNumbers);
 const boardContainer = document.getElementById('board');
-const drawnNumberDiv = document.getElementById('drawn-number');
+const drawnNumber = document.getElementById('drawn-number');
 
 function createBoard() {
     boardContainer.innerHTML = '';
@@ -33,44 +34,44 @@ function shuffle(arr) {
 
 function drawNumber() {
     const drawnNumber = Math.floor(Math.random() * 25) + 1;
-    drawnNumberDiv.textContent = `Number drawn: ${drawnNumber}`;
+    drawnNumber.textContent = `Number drawn: ${drawnNumber}`;
     highlightSquare(drawnNumber);
 }
 
 function highlightSquare(number) {
     const boardItems = document.querySelectorAll('.board-item');
     for (let i = 0; i < boardItems.length; i++) {
-        if (boardItems[i].textContent == number) {
+        if (boardItems[i].textContent == number || boardItems[i].textContent === freeSpace) {
             boardItems[i].style.backgroundColor = 'red';
         }
     }
 }
 
+//all winning bingo line combinations
 const bingoWinningLines = [
-    [0, 1, 2, 3, 4],           // Top row
-    [5, 6, 7, 8, 9],           // Second row
-    [10, 11, 12, 13, 14],      // Third row
-    [15, 16, 17, 18, 19],      // Fourth row
-    [20, 21, 22, 23, 24],      // Bottom row
-    [0, 5, 10, 15, 20],        // First column
-    [1, 6, 11, 16, 21],        // Second column
-    [2, 7, 12, 17, 22],        // Third column
-    [3, 8, 13, 18, 23],        // Fourth column
-    [4, 9, 14, 19, 24],        // Fifth column
-    [0, 6, 12, 18, 24],        // Diagonal from top-left to bottom-right
-    [4, 8, 12, 16, 20],        // Diagonal from top-right to bottom-left
-    // Include the Free Space (center square) in all combinations
-    [0, 1, 2, 3, 4, 6],        // Top row with Free Space
-    [0, 1, 2, 3, 4, 12],       // Top row with Free Space
-    [0, 5, 10, 15, 20, 12],    // First column with Free Space
-    [20, 21, 22, 23, 24, 12],  // Bottom row with Free Space
-    [4, 9, 14, 19, 24, 12],    // Fifth column with Free Space
-    [0, 6, 12, 18, 24, 1],     // Diagonal from top-left to bottom-right with Free Space
-    [4, 8, 12, 16, 20, 3]      // Diagonal from top-right to bottom-left with Free Space
+    [0, 1, 2, 3, 4],
+    [5, 6, 7, 8, 9],
+    [10, 11, 12, 13, 14],
+    [15, 16, 17, 18, 19],
+    [20, 21, 22, 23, 24],
+    [0, 5, 10, 15, 20],
+    [1, 6, 11, 16, 21],
+    [2, 7, 12, 17, 22],
+    [3, 8, 13, 18, 23],
+    [4, 9, 14, 19, 24],
+    [0, 6, 12, 18, 24],
+    [4, 8, 12, 16, 20],
+    [0, 1, 2, 3, 4, 12],
+    [0, 5, 10, 15, 20, 12],
+    [20, 21, 22, 23, 24, 12],
+    [4, 9, 14, 19, 24, 12],
+    [0, 6, 12, 18, 24, 0],
+    [4, 8, 12, 16, 20, 4]
 ];
 
 
-//highlight the winning bingo line in yellow
+
+
 function checkForWin() {
     const boardItems = document.querySelectorAll('.board-item');
 
@@ -81,15 +82,16 @@ function checkForWin() {
             // Highlight the winning squares in yellow
             for (const index of line) {
                 boardItems[index].classList.add('winning-square');
+                boardItems[index].style.backgroundColor = 'yellow'; // Highlight in yellow
             }
-
             // Display the winning message and reload the page on closing the alert
             alert("BINGO! YOU WON!");
-            location.reload();
+
             break;
         }
     }
 }
+
 // Modal functions
 function showModal() {
     const modal = document.getElementById('bingo-modal');
@@ -103,7 +105,7 @@ function closeModal() {
 
 function drawNumber() {
     const drawnNumber = Math.floor(Math.random() * 25) + 1;
-    drawnNumberDiv.textContent = `Number drawn: ${drawnNumber}`;
+    drawnNumber.textContent = `Number drawn: ${drawnNumber}`;
     highlightSquare(drawnNumber);
     checkForWin();
 }
