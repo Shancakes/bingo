@@ -4,11 +4,11 @@ A basic bingo game built using Javascript, HTML, and CSS. The app enables users 
 
 ## Description
 
--Users start off with a randomly generated 5 X 5 bingo board.
+-Users start off with a randomly generated 5 X 5 bingo board, with a "Free Space" in the middle.
 
 -A random bingo number is generated when clicking the "Draw Number" button. If the number drawn corresponds with a number on the board, the square on the board is highlighted red.
 
--Users can use the "Draw Number" board repeatedly, filling the swuares until 5 in a row horizontally, vertically, or diagonally is achieved.
+-Users can use the "Draw Number" board repeatedly, filling the squares until 5 in a row horizontally, vertically, or diagonally is achieved.
 
 -When 5 in a row (BINGO) is achieved, an alert pormpts the user that they have won bingo. Closing the window notifys the user which is the winning row, by highlighting the winning squares in yellow.
 
