@@ -10,7 +10,7 @@ A basic bingo game built using Javascript, HTML, and CSS. The app enables users 
 
 -Users can use the "Draw Number" board repeatedly, filling the squares until 5 in a row horizontally, vertically, or diagonally is achieved.
 
--When 5 in a row (BINGO) is achieved, an alert pormpts the user that they have won bingo. Closing the window notifys the user which is the winning row, by highlighting the winning squares in yellow.
+-When 5 in a row (BINGO) is achieved, an alert prompts the user that they have won bingo. Closing the window notifys the user of the winning row, by highlighting the row in yellow.
 
 -Users can play again by using the "Reset Board" button.
 
