@@ -39,13 +39,18 @@ A basic bingo game built using Javascript, HTML, and CSS. The app enables users 
 ## Javascript Concepts Used
 String Methods Used:
 
-    length
+-  length
 
 Array Methods Used:
 
-    push()
-    includes()
-    concat()
-    some()
-    every()
-    splice()
+-  push()
+
+-  includes()
+
+-  concat()
+
+-  some()
+
+-  every()
+
+-  splice()
