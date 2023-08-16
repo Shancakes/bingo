@@ -35,3 +35,17 @@ A basic bingo game built using Javascript, HTML, and CSS. The app enables users 
 -Start calculating
 
 # Enjoy playing BINGO! 
+
+## Javascript Concepts Used
+String Methods Used:
+
+    length
+
+Array Methods Used:
+
+    push()
+    includes()
+    concat()
+    some()
+    every()
+    splice()
